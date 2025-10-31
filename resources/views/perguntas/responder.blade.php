@@ -18,6 +18,9 @@
                         resultado ao final!
                     </p>
 
+                    <form method="POST" action="{{ route(name: 'quizz.responder')}}">
+                    @csrf
+
                     @foreach($perguntas as $pergunta)
                         <div class="card mb-4">
                             <h2>{{ $pergunta->texto }}</h2>
@@ -27,7 +30,7 @@
                                     <input
                                         class="form-check-input"
                                         type="radio"
-                                        name="pergunta_{{ $pergunta->id }}"
+                                        name="{{ $pergunta->id }}"
                                         id="opcao1_{{ $pergunta->id }}"
                                         value="A"
                                     >
@@ -44,7 +47,7 @@
                                     <input
                                         class="form-check-input"
                                         type="radio"
-                                        name="pergunta_{{ $pergunta->id }}"
+                                        name="{{ $pergunta->id }}"
                                         id="opcao1_{{ $pergunta->id }}"
                                         value="B"
                                     >
@@ -61,7 +64,7 @@
                                     <input
                                         class="form-check-input"
                                         type="radio"
-                                        name="pergunta_{{ $pergunta->id }}"
+                                        name="{{ $pergunta->id }}"
                                         id="opcao1_{{ $pergunta->id }}"
                                         value="C"
                                     >
@@ -78,7 +81,7 @@
                                     <input
                                         class="form-check-input"
                                         type="radio"
-                                        name="pergunta_{{ $pergunta->id }}"
+                                        name="{{ $pergunta->id }}"
                                         id="opcao1_{{ $pergunta->id }}"
                                         value="D"
                                     >
@@ -99,6 +102,7 @@
                             Enviar Respostas
                         </button>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
